@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "enterprise-genai"
+version = "0.1.0"
+description = "Production-ready GenAI platform with hybrid RAG, agents, and MLOps"
+authors = ["Ashaduzzaman Sarker<ashaduzzaman2505@gmail.com>"]
+readme = "README.md"
+python = ">3.10, <3.13"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "^0.1.0"
+langchain-community = "^0.0.20"
+langchain-openai = "^0.0.5"
+langchain-anthropic = "^0.1.0"
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+neo4j = "^5.16.0"
+pinecone-client = "^3.0.0"
+unstructured = {extras = ["all-docs"], version = "^0.12.0"}
+tiktoken = "^0.5.2"
+sentence-transformers = "^2.3.0"
+spacy = "^3.7.0"
+python-dotenv = "^1.0.0"
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+sqlalchemy = "^2.0.0"
+asyncpg = "^0.29.0"
+redis = "^5.0.0"
+celery = "^5.3.0"
+structlog = "^24.1.0"
+httpx = "^0.26.0"
+tenacity = "^8.2.0"
+prometheus-client = "^0.19.0"
+numpy = "^1.26.0"
+pandas = "^2.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.23.0"
+pytest-cov = "^4.1.0"
+black = "^24.0.0"
+isort = "^5.13.0"
+ruff = "^0.1.0"
+pre-commit = "^3.6.0"
+mypy = "^1.8.0"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
